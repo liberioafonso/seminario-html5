@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>WEB Seminar</title>
+        <link rel="shortcut icon" href="img/icon.png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"/>
+    </head>
+    <body>
+        <article >
+            <aside id="tabs">
+                <ul id='menu'>
+                    <li><a id="home" href="#aba-0">HOME</a></li>
+                    <li><a href="#aba-1">FULLSCREEN API</a></li>
+                    <li><a href="#aba-2">FULLSCREEN EXAMPLE</a></li>
+                    <li><a href="#aba-3">PAGE VISIBILITY API</a></li>
+                    <li><a href="#aba-4">PAGE VISIBILITY EXAMPLE</a></li>
+                    <li><a href="#aba-5">GEOLOCATION API</a></li>
+                    <li><a href="#aba-6">GEOLOCATION EXAMPLE</a></li>
+                    <li><a href="#aba-7">NAVIGATION TIMMING API</a></li>
+                    <li><a href="#aba-8">NAVIGATION TIMMING EXAMPLE</a></li>
+                </ul>
+                <div id='content'>
+                    <div id="aba-0">
+                        <span id='welcome'></span><br><br>
+                        <h2 id='subh2'>INTEGRANTES</h2>
+                        <p>Libério Afonso Geraldo Cardoso da Silva</p>
+                        <a href="https://br.linkedin.com/in/liberioafonso"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-linkedin-512.png" width="20" height="20" title="linkedin" alt="Flower"></a><br>
+                        <p>Guilherme Lucas Medeiros de Miranda</a>
+                        <a href="https://br.linkedin.com/in/guilhermedeiros"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-linkedin-512.png" width="20" height="20" title="linkedin" alt="Flower"></a><br><br>
+                        <p>Estamos cursando a disciplina de desenvolvimento WEB do CEFET-MG, somos amigos do Sr.Fegeno e vamo ajuda-lo a compor
+                            a música: <b>“Os Ataques Potencialmente Irresponsáveis do Agáte Êmi-Éli, o Quinto”</b> para tocarmos aqui na taverna
+                            <b>“O Olho do Beholder”</b>. Como contribuição para a musica estamos trazendo 4 histórias importantes sobre o reino de Weblot
+                            esperamos que o Sr.Fegeno goste e nos retribua com PW$ suficientes para sermos aprovados na disciplina:         
+                        </p><br><br>
+                        <ul>FULLSCREEN API</ul><br>
+                        <ul>PAGE VISIBILITY API</ul><br>
+                        <ul>GEOLOCATION API</ul><br>
+                        <ul>NAVIGATION TIMMING API</ul><br><br>     
+                        <p>Para embarcar nessa aventura e conhecer mais sobre nossas histórias basta navegar no menu do lado esquerdo da página.</p>                                         
+                    </div>
+                    <div id="aba-1">
+                        <h2>FullScreen API</h2>  
+                        <p>A <b>FullScreen API</b> fornece uma maneira fácil para o conteúdo da web para ser apresentado usando a tela inteira
+                             do usuário.</p><br><br>
+                        <p>O exemplo a seguir mostra como você pode colocar um vídeo com id="myvideo" no modo fullscreen:</p><br><br>
+                        <div id='codigo'>var elem = document.getElementById("myvideo");<br>
+                                if (elem.requestFullscreen) {<br>
+                                    <ul>elem.requestFullscreen();<br>
+                                } else if (elem.msRequestFullscreen) {<br>
+                                    <ul>elem.msRequestFullscreen();<br>
+                                } else if (elem.mozRequestFullScreen) {<br>
+                                    <ul>elem.mozRequestFullScreen();<br>
+                                } else if (elem.webkitRequestFullscreen) {<br>
+                                    <ul>elem.webkitRequestFullscreen();<br>
+                                }</div><br> 
+                        <h2 id='subh2'>Compatibilidade</h2><br>
+                        <img src="img/compatibilidade_fullscreen.png" width="577" height="240" title="linkedin" alt="Flower">                       
+                    </div>
+                    <div id="aba-2">
+                        <h2>FullScreen Example</h2>
+                        <img id="image" src="img/image.jpg" alt="Test Image">
+                        <button id="fs-img-button">Fullscreen Image</button>
+                        <button id="fs-doc-button">Fullscreen Page</button>
+                        <button id="fs-exit-doc-button">Exit Fullscreen Page</button>
+                    </div>
+                    <div id="aba-3">
+                        <h2>Page Visibility API</h2>
+                        <p>A <b>API de visibilidade</b> de página deixa você saber quando uma página da web está visível ou em foco. Com a 
+                            navegação em abas, existem razões para que quaisquer páginas da web que estejam sendo executadas em segundo 
+                            plano e não visíveis para o usuário. Quando o usuário minimiza a página ou muda para outra aba, a API 
+                            envia um evento visibilitychange informando o estado de visibilidade da página. Você pode detectar o evento 
+                            e realizar algumas ações ou modificar o seu comportamento. Por exemplo, se a sua aplicação web estiver 
+                            reproduzindo um video, ela pode pausar durante o momento que o usuário estiver olhando para outra aba, 
+                            e reproduz novamente quando o usuário retorna para a aba. O usuário não perde nenhuma parte do video e 
+                            pode continuar assistindo.</p><br><br>
+                            <p>O exemplo, que pausa o video quando você troca para outra aba e volta a reproduzir quando você retorna, foi 
+                                criado com o seguinte código:</p><br><br>
+                            <div id='codigo'>// Configura o nome da propriedade hidden e o evento de mudança para visibilidade<br>
+                                    var hidden, visibilityChange;<br>
+                                    if (typeof document.hidden !== "undefined") { // Suporte para Opera 12.10 e Firefox 18 em diante<br>
+                                        <ul>hidden = "hidden";<br>
+                                        <ul>visibilityChange = "visibilitychange";<br>
+                                    } else if (typeof document.mozHidden !== "undefined") {<br>
+                                        <ul>hidden = "mozHidden";<br>
+                                        <ul>visibilityChange = "mozvisibilitychange";<br>
+                                    } else if (typeof document.msHidden !== "undefined") {<br>
+                                        <ul>hidden = "msHidden";<br>
+                                        <ul>visibilityChange = "msvisibilitychange";<br>
+                                    } else if (typeof document.webkitHidden !== "undefined") {<br>
+                                        <ul>hidden = "webkitHidden";<br>
+                                        <ul>visibilityChange = "webkitvisibilitychange";<br>
+                                    }<br><br>
+                                     
+                                    var videoElement = document.getElementById("videoElement");<br><br>
+                                    
+                                    // Se a página está escondida, pausa o video;<br>
+                                    // Se a página está visível, reproduz o video<br>
+                                    function handleVisibilityChange() {<br>
+                                        <ul>if (document[hidden]) {<br>
+                                            <ul><ul>videoElement.pause();<br>
+                                        <ul>} else {<br>
+                                            <ul><ul>videoElement.play();<br>
+                                        <ul>}<br>
+                                    }<br><br>
+                                    
+                                    // Alerta se o navegador não suporta addEventListener ou a API de visibilidade da página<br>
+                                    if (typeof document.addEventListener === "undefined" ||<br>
+                                        <ul>typeof document[hidden] === "undefined") {<br>
+                                        <ul>alert("This demo requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API.");<br>
+                                    } else {<br>
+                                        <ul>// Manipula o evento de mudança da visibilidade da página<br>
+                                        <ul>document.addEventListener(visibilityChange, handleVisibilityChange, false);<br><br>
+                                        
+                                        <ul>// Reverte para o favicon existente para o site quando a página é fechada;<br>
+                                        <ul>// caso contrário, o favicon continua como paused.png<br>
+                                        <ul>window.addEventListener("unload", function(){<br>
+                                            <ul><ul>favicon.change("/favicon.ico");<br>
+                                        <ul>}, false);<br><br>
+                                        
+                                        <ul>// Quando o video é pausado, configura o favicon.<br>
+                                        <ul>// Isso mostra a imagem paused.png<br>
+                                        <ul>videoElement.addEventListener("pause", function(){<br>
+                                            <ul><ul>favicon.change("images/paused.png");<br>
+                                        <ul>}, false);<br><br>
+                                        
+                                        <ul>// Quando o video é reproduzido, configura o favicon.<br>
+                                        <ul>videoElement.addEventListener("play", function(){<br>
+                                            <ul><ul>favicon.change("images/playing.png");<br>
+                                        <ul>}, false);<br><br>
+                                        
+                                        <ul>// Configura o título da aba com o tempo atual do video<br>
+                                        <ul>videoElement.addEventListener("timeupdate", function(){<br>
+                                            <ul><ul>document.title = Math.floor(videoElement.currentTime) + " segundo(s)";<br>
+                                        <ul>}, false);<br>
+                                    }</div><br> 
+                            <h2 id='subh2'>Compatibilidade</h2><br>
+                            <img src="img/compatibilidade_pv.png" width="577" height="240" title="linkedin" alt="Flower">
+                    </div>
+                    <div id="aba-4">
+                        <h2>Page Visibility Example</h2>
+                        <video id="video" width="640" height="365" controls>
+                            <source src="vid/video.mp4" type="video/mp4">
+                        </video>
+                        <button id="fs-vid-button">Go Fullscreen</button>
+                    </div>
+                    <div id="aba-5">
+                            <h2>Geolocation API</h2>
+                            <p>A <b>interface Geolocation</b> representa um objeto ábil de programaticamente obter a posição do 
+                                aparelho. Dá ao conteúdo web acesso à localização do aparelho. Isto permite com que o 
+                                website ou a aplicação ofereça resultados customizados baseados na localização do usuário.</p><br><br>
+                            <p>O exemplo a seguir irá fazer a função the do_something() executar quando a localização for obtida:</p><br><br>
+                            <div id='codigo'>navigator.geolocation.getCurrentPosition(function(position) {<br> 
+                                <ul>do_something(position.coords.latitude, position.coords.longitude);<br>
+                            });</div><br> 
+                            <h2 id='subh2'>Compatibilidade</h2><br>
+                            <img src="img/compatibilidade_geolocation.png" width="577" height="240" title="linkedin" alt="Flower">
+                    </div>
+                    <div id="aba-6">
+                        <h2>Geolocation API Example</h2>
+                        <span id='startLat'></span><span id='startLon'></span>
+                        <div id="location-map"></div>
+                        <button id="geo-get-coords">Get Coords</button>
+                        <button id="geo-get-map">Get Map</button>
+                        <button id="fs-map-button">Go Fullscreen</button>
+                    </div>
+                    <div id="aba-7">
+                            <h2>Navigation Timming API</h2>
+                            <p>A <b>API Navigation Timing</b> fornece dados que podem ser usados para medir a performance de um website. Diferente de outros
+                                mecanismos baseados em Javascript que já foram usados para o mesmo propósito, esta API pode fornecer dados sobre
+                                a latência do começo ao fim que podem ser mais precisas e relevantes.</p><br><br>
+                            <p>O exemplo a seguir mostra como você pode medir o tempo de carregamento percebido:</p><br><br>
+                            <div id='codigo'>function onLoad() {<br> 
+                                <ul>var now = new Date().getTime();<br>
+                                <ul>var page_load_time = now - performance.timing.navigationStart;<br>
+                                <ul>console.log("Tempo de carregamento percebido pelo usuário: " + page_load_time);<br>
+                            }</div><br> 
+                            <h2 id='subh2'>Compatibilidade</h2><br>
+                            <img src="img/compatibilidade_navigation.png" width="577" height="240" title="linkedin" alt="Flower">                    
+                        </div>
+                    <div id="aba-8">
+                        <h2>Navigation Timming Example</h2>
+                        <span id='timeLoadPage'></span><br>
+                        <span id='navigationType'></span><br>
+                    </div>
+                </div>
+                
+            </aside>            
+        </article>
+        <div id="cronometro">
+                <div class="reloj" id="Horas">00</div>
+                <div class="reloj" id="Minutos">:00</div>
+                <div class="reloj" id="Segundos">:00</div>
+            </div>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+        <script type="text/javascript" src="js/navigationTimeAPI.js"></script>
+        <script type="text/javascript" src="js/pageVisibilityAPI.js"></script>
+        <script type="text/javascript" src='js/geolocationAPI.js'></script>
+        <script type="text/javascript" src="js/controller.js"></script>
+        <script type="text/javascript" src="js/fullScreenAPI.js"></script>
+    </body>
+</html>

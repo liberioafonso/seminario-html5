@@ -1,0 +1,204 @@
+/*----Adiconar font no arquivo----*/
+@font-face {
+  font-family: "DarksSkyrimFont";
+  src: url('font/SkyrimFont.ttf');
+}
+
+@font-face {
+  font-family: "Aetherius";
+  src: url('font/menu.ttf');
+}
+
+/*----Configurações Gerais----*/
+body {
+  background-image: url('img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Aetherius";
+}
+
+/*----Estilizando o Menu de opções----*/
+#menu {
+  float: botton;
+  margin: 0px;
+  position: fixed;
+  top: 0;
+  left: 10px;
+  height : 100%;
+  width: 300px;
+  padding-left: 10px;
+  padding-top: 10%;
+  background:rgba(0,0,0,0.7);
+  border-right: 2px solid #696969;
+  border-left: 2px solid #696969;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+#menu li{
+  font-size: 18px;
+  list-style-type: none;
+  padding-top: 20px;
+}
+
+#menu li:nth-child(2n){
+  font-size: 25px;
+  padding-top: 40px;
+}
+
+a {
+  color: #696969;
+  text-decoration: none;
+}
+
+.ui-tabs-nav .ui-state-active a{
+  color: white;
+  font-weight: bold;
+}
+
+.ui-tabs-nav .ui-state-hover #home{
+  color: white;
+  font-weight: bold;
+  padding-left: 20px;
+  background-image: url("img/home.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+}
+
+.ui-tabs-nav .ui-state-hover a:not(#home){
+  color: white;
+  font-weight: bold;
+  padding-left: 20px;
+  background-image: url("img/arrowTransparent.png");
+  background-repeat: no-repeat;
+}
+/*----Estilizando os conteúdos----*/
+h2 {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'DarksSkyrimFont';
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+#codigo{
+  font-family: "arial";
+  color: white;
+  font-size: 12px;
+  background-color: #2c2c2c;
+  top: 0px;
+}
+
+#startLat, #startLon, #timeLoadPage, #navigationType, p, a, ul{
+  text-align: center;
+  display: inline;
+  color: white;
+}
+
+#content{
+  margin: 8% auto;
+  max-width: 1000px;
+  min-width: 100px;
+  width: 30%;
+  background: rgba(0,0,0,0.7);
+  padding: 30px;
+  border-image-slice: 25 25 25 25 fill; 
+  border-image-width: 20px 20px 20px 20px;
+  border-image-outset: 5px;
+  border-image-repeat: stretch stretch;
+  border-image-source: url("img/border.png");
+  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+video {
+  width: 100%;
+}
+
+button {
+  display: inline-table;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: none;
+  font-size: 12px;
+  padding: 0.4rem 0.8em;
+  color: #696969;
+  background:  rgba(0,0,0,0.9);
+  border: 2px solid #696969;
+  border-radius: 8px;
+  /* topo | direita | inferior | esquerda */
+  margin: 0.5em 0.25rem 0;
+  text-align: center;
+}
+
+button:hover, button:focus {
+  cursor: pointer;
+  color: white;
+  border: 2px solid white;
+}
+
+button:active {
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1) inset;
+}
+
+img {
+  max-width: 100%;
+  max-height: 800px;
+}
+
+img:-webkit-full-screen {
+  max-width: none;
+}
+
+img:-moz-full-screen {
+  max-width: none;
+}
+
+img:-ms-fullscreen {
+  max-width: none;
+}
+
+img:full-screen {
+  max-width: none;
+}
+
+img:fullscreen {
+  max-width: none;
+}
+ 
+/*Geolocation API*/
+#location-map{
+  background: #fff;
+  border: none;
+  height: 540px;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#cronometro{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+.reloj{
+	float: left;
+	font-size: 20px;
+	font-family: "DarksSkyrimFont";
+	color: white;
+}
+
+#welcome{
+  display: inline;
+  color: white;
+  font-size: 25px;
+  font-family: "DarksSkyrimFont";
+}
+
+#subh2 {
+  text-align: left;
+}
